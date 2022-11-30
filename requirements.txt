@@ -46,3 +46,4 @@ thop>=0.1.1  # FLOPs computation
 # pycocotools>=2.0  # COCO mAP
 # roboflow
 wget
+opencv-python-headless==4.5.3.56
