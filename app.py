@@ -49,9 +49,9 @@ def imageInput(device, src):
 
     elif src == 'From test set.':
         # Image selector slider
-        imgpath = glob.glob('data/images/*')
-        imgsel = st.slider('Select random images from test set.', min_value=1, max_value=len(imgpath), step=1)
-        image_file = imgpath[imgsel - 1]
+        test_images = os.listdir('data/images/')
+        test_image = st.selectbox('Please select a test image:', test_images)
+        image_file = 'data/images/' + test_image
         submit = st.button("Predict!")
         col1, col2 = st.columns(2)
         with col1:
