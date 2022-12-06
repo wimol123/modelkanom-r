@@ -92,12 +92,12 @@ if __name__ == '__main__':
 
 
 @st.cache
-def loadModel():
-    start_dl = time.time()
-    model_file = wget.download('https://archive.org/download/yolov5s_202212/last.pt', out="models/")
-    finished_dl = time.time()
-    print(f"Model Downloaded, ETA:{finished_dl - start_dl}")
+# def loadModel():
+#     start_dl = time.time()
+#     model_file = wget.download('https://archive.org/download/yolov5s_202212/last.pt', out="models/")
+#     finished_dl = time.time()
+#     print(f"Model Downloaded, ETA:{finished_dl - start_dl}")
 
 
-loadModel()
+# loadModel()
 
