@@ -83,7 +83,7 @@ def main():
 
     st.header('🌾Wheat Head Detection Model')
     st.subheader('👈🏽Select the options')
-    st.sidebar.markdown("https://github.com/thepbordin/Obstacle-Detection-for-Blind-people-Deployment")
+    st.sidebar.markdown("https://bit.ly/3uvYQ3R")
 
     imageInput(deviceoption, datasrc)
 
