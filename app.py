@@ -6,8 +6,8 @@ from PIL import Image
 import numpy as np
 import torch, json , cv2 , detect
 
-st.image('https://i.pinimg.com/736x/a6/73/4e/a6734ecaf9dabe821a6a18e2d8d01592.jpg' , width=100)
-st.title("Under the sea detection")
+
+st.title("🌊 Under the sea detection")
 
 st.write("Upload your Image...")
 
