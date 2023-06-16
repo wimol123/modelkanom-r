@@ -5,7 +5,7 @@ import os
 from PIL import Image
 import numpy as np
 import torch, json , cv2 , detect
-st.cache
+
 
 st.title("🌊 Under the sea detection")
 
