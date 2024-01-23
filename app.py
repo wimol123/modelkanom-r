@@ -43,4 +43,10 @@ if uploaded_file is not None:
       st.text(name)
   
   # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
-  st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
+  if name == 'Darathong':
+    st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
+  elif name == 'SaneCharn':
+    st.image(Image.open("data/images/SaneCharn.jpg"), caption='Original Image', use_column_width=True)
+  elif name == 'ChorMuang':
+    st.image(Image.open("data/images/ChorMuang.jpg"), caption='Original Image', use_column_width=True)
+    
