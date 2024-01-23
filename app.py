@@ -32,11 +32,11 @@ if uploaded_file is not None:
   detect_class = result.pandas().xyxy[0] 
   
   # แปลงค่า 'name' จาก "Darathong" เป็น "ดาราทอง"
-  detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง'})
+  detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง (Darathong)'})
   
-  st.code(detect_class[['name', 'xmin', 'ymin', 'xmax', 'ymax']])
+  st.code(detect_class[['name']])
   
-  outputpath = 'data/images/Darathong.jpg'  # เปลี่ยนชื่อไฟล์เป็น darathong.jpg
+  outputpath = 'Darathong.jpg'  # เปลี่ยนชื่อไฟล์เป็น darathong.jpg
 
   result.render()  # render bbox in image
   for im in result.ims:
