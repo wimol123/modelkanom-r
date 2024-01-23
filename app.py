@@ -36,7 +36,7 @@ if uploaded_file is not None:
   
   st.code(detect_class[['name', 'xmin', 'ymin', 'xmax', 'ymax']])
   
-  outputpath = 'darathong.jpg'  # เปลี่ยนชื่อไฟล์เป็น darathong.jpg
+  outputpath = 'data/images/Darathong.jpg'  # เปลี่ยนชื่อไฟล์เป็น darathong.jpg
 
   result.render()  # render bbox in image
   for im in result.ims:
