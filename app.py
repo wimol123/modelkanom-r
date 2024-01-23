@@ -44,4 +44,4 @@ if uploaded_file is not None:
         st.text(name)
 
     if unique_names == ['ดาราทอง (Darathong)']:
-        st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True
+        st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
