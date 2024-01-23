@@ -42,14 +42,7 @@ if uploaded_file is not None:
     st.write("Names:")
     for name in unique_names:
         st.text(name)
+    
+    st.text(unique_names)
 
-    # Dictionary mapping names to image paths
-    image_paths = {
-        'Darathong': 'data/images/Darathong.jpg',
-        'SaneCharn': 'data/images/SaneCharn.jpg',
-        'ChorMuang': 'data/images/ChorMuang.jpg'
-    }
-
-    # Display images based on selected name
-    selected_name = st.selectbox("Select a name:", unique_names)
-    st.image(Image.open(image_paths[selected_name]), caption=f'{selected_name} Image', use_column_width=True)
+   
