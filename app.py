@@ -42,6 +42,7 @@ if uploaded_file is not None:
     for name in unique_names:
         st.text(name)
         
-        # Dynamically generate image paths based on the current name
-        image_path = f"data/images/{name}.jpg"
-        st.image(Image.open(image_path), caption='Original Image', use_column_width=True)
+        image_path = f"{os.path.dirname(os.path.abspath(__file__))}/data/images/{name}.jpg"
+    st.image(Image.open(image_path), caption='Original Image', use_column_width=True)
+
+
