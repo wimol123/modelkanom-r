@@ -49,4 +49,6 @@ if uploaded_file is not None:
         st.image(Image.open("data/images/SaneCharn.jpg"), caption='Original Image', use_column_width=True)
     if unique_names == ['ช่อม่วง (ChorMuang)']:
         st.image(Image.open("data/images/ChorMuang.jpg"), caption='Original Image', use_column_width=True)
-    
+    if unique_names == ['ช่อม่วง (SaneCharn)' 'ดาราทอง (Darathong)']:
+        st.image(Image.open("data/images/SaneCharn.jpg"), caption='Original Image', use_column_width=True)
+        st.image(Image.open("data/images/ChorMuang.jpg"), caption='Original Image', use_column_width=True)
