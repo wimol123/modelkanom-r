@@ -42,7 +42,7 @@ if uploaded_file is not None:
     st.write("Names:")
     for name in unique_names:
         st.text(name)
-
+    st.text(unique_names)
     if unique_names == ['ดาราทอง (Darathong)']:
         st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
     if unique_names == ['เสน่ห์จันทร์ (SaneCharn)']:
