@@ -19,30 +19,34 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/Model2.pt')
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
 if uploaded_file is not None:
   
-    file_bytes = np.asarray(bytearray(uploaded_file.read()))
-    image = cv2.imdecode(file_bytes, 1)
+  file_bytes = np.asarray(bytearray(uploaded_file.read()))
+  image = cv2.imdecode(file_bytes, 1)
 
-    imgRGB = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    # st.image(imgRGB)
+  imgRGB = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+  # st.image(imgRGB)
 
-    st.write("")
-    st.write("Detecting...")
-    result = model(imgRGB, size=600)
+  st.write("")
+  st.write("Detecting...")
+  result = model(imgRGB, size=600)
+  
+  detect_class = result.pandas().xyxy[0]
+  
+  detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง (Darathong)', 'SaneCharn': 'เสน่ห์จันทร์ (SaneCharn)',
+                                                   'ChorMuang': 'ช่อม่วง (ChorMuang)'})
+  
+  # Get unique names
+  unique_names = detect_class['name'].unique()
+  
+  # Display the unique names without numbers
+  st.write("Names:")
+  for name in unique_names:
+      st.text(name)
+  
+  # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
+  if name == 'Darathong':
+    st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
+  elif name == 'SaneCharn':
+    st.image(Image.open("data/images/SaneCharn.jpg"), caption='Original Image', use_column_width=True)
+  elif name == 'ChorMuang':
+    st.image(Image.open("data/images/ChorMuang.jpg"), caption='Original Image', use_column_width=True)
     
-    detect_class = result.pandas().xyxy[0]
-    
-    detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง (Darathong)', 'SaneCharn': 'เสน่ห์จันทร์ (SaneCharn)',
-                                                    'ChorMuang': 'ช่อม่วง (ChorMuang)'})
-    
-    # Get unique names
-    unique_names = detect_class['name'].unique()
-    
-    # Display the unique names without numbers
-    st.write("Names:")
-    for name in unique_names:
-        st.text(name)
-        
-        image_path = f"{os.path.dirname(os.path.abspath(__file__))}/data/images/{name}.jpg"
-        st.image(Image.open(image_path), caption='Original Image', use_column_width=True)
-
-
