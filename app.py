@@ -37,5 +37,5 @@ if uploaded_file is not None:
   st.code(detect_class[['name']])
   
  # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
-  st.image(Image.open("Darathong.jpg"), caption='Original Image', use_column_width=True)
+  st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
 
