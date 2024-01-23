@@ -32,8 +32,8 @@ if uploaded_file is not None:
   detect_class = result.pandas().xyxy[0] 
   
   # แปลงค่า 'name' จาก "Darathong" เป็น "ดาราทอง"
- detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง (Darathong)'
-                                                  'SaneCharn': 'เสน่ห์จันทร์ (SaneCharn)'
+ detect_class['name'] = detect_class['name'].map({'Darathong': 'ดาราทอง (Darathong)',
+                                                  'SaneCharn': 'เสน่ห์จันทร์ (SaneCharn)',
                                                   'ChorMuang': 'ช่อม่วง (ChorMuang)'})
 
 st.code(detect_class['name'].drop_duplicates().reset_index(drop=True))
