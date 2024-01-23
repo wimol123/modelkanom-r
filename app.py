@@ -38,7 +38,7 @@ if uploaded_file is not None:
   unique_names = detect_class['name'].unique()
   
   # Display the unique names without numbers
-  st.write("Detected Names:")
+  st.write("Names(ชื่อ):")
   for name in unique_names:
       st.text(name)
   
