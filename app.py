@@ -35,7 +35,8 @@ if uploaded_file is not None:
   #     xmin       ymin    xmax        ymax          confidence  class    name
   #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
   
-  st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
+  detect_class['name'] = detect_class['name'].map({'Darathong':'ดาราทอง (Darathong)','SaneCharn':'เสน่ห์จันทร์ (SaneCharn)','ChorMuang':'ช่อม่วง (ChorMuang)'})
+  st.code(detect_class[['name']])
   
   
   
