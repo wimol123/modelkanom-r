@@ -36,11 +36,6 @@ if uploaded_file is not None:
   
   st.code(detect_class[['name']])
   
-  outputpath = 'output.jpg'  # เปลี่ยนชื่อไฟล์เป็น darathong.jpg
+ # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
+  st.image(Image.open("Darathong.jpg"), caption='Original Image', use_column_width=True)
 
-  result.render()  # render bbox in image
-  for im in result.ims:
-      im_base64 = Image.fromarray(im)
-      im_base64.save(outputpath)
-      img_ = Image.open(outputpath)
-      st.image(img_, caption='Model Prediction(s)')
