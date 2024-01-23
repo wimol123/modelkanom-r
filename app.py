@@ -43,6 +43,6 @@ if uploaded_file is not None:
         st.text(name)
         
         image_path = f"{os.path.dirname(os.path.abspath(__file__))}/data/images/{name}.jpg"
-    st.image(Image.open(image_path), caption='Original Image', use_column_width=True)
+        st.image(Image.open(image_path), caption='Original Image', use_column_width=True)
 
 
