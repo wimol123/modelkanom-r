@@ -28,17 +28,13 @@ if uploaded_file is not None:
   st.write("Detecting...")
   result = model(imgRGB, size=600)
   
-  detect_class = result.pandas().xyxy[0] 
+  detect_class = result.pandas().xyxy[0]
   
-  #labels, cord_thres = detect_class[:, :].numpy(), detect_class[:, :].numpy()
-  
-  #     xmin       ymin    xmax        ymax          confidence  class    name
-  #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
-  
- detect_class['name'] = detect_class['name'].map({'Darathong':'ดาราทอง (Darathong)','SaneCharn':'เสน่ห์จันทร์ (SaneCharn)','ChorMuang':'ช่อม่วง (ChorMuang)'})
-  
+  detect_class['name'] = detect_class['name'].map({'Darathong':'ดาราทอง (Darathong)','SaneCharn':'เสน่ห์จันทร์ (SaneCharn)','ChorMuang':'ช่อม่วง (ChorMuang)'})
   st.code(detect_class[['name']])
   
- # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
+  # ใช้ st.image เพื่อแสดงภาพ "Darathong.jpg" ที่อัปโหลดมา
   st.image(Image.open("data/images/Darathong.jpg"), caption='Original Image', use_column_width=True)
+  
 
+  
